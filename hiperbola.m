@@ -14,6 +14,6 @@ function [retval] = hiperbola (input1, input2)
   B= [z1;z2];
   
   p= inv(A)*B;
-  retval= [power(p(1),-1), power(p(2),-1)];
+  retval= [power(p(1),-1), p(2)/p(1)];
 
 endfunction

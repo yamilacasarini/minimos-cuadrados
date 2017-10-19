@@ -1,6 +1,6 @@
 function [retval] = mincuadr (m)
 
- p= expotencial(m);
+ p= lineal(m);
   
   printf("p(x)=");
   
@@ -8,5 +8,8 @@ function [retval] = mincuadr (m)
   for i=1:n+1
   printf("%+fx^%d", p(i), n+1-i);
   endfor
+  
+ 
+  plot(x,f);
 
 endfunction

@@ -15,5 +15,4 @@ function [retval] = lineal (m)
   
   retval= inv(A)*B;
   
-  
 endfunction
