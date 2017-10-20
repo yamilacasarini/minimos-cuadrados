@@ -20,6 +20,15 @@ function [retval] = parabolico (input1, input2)
   A= [x1,y1,z1;x2,y2,z2;x3,y3,z3];
   B= [s1;s2;s3];
   
-  retval= inv(A)*B;
+  p= inv(A)*B;
+  
+  a= p(1);
+  b= p(2);
+  c= p(3);
+  
+  f= c+(a*m(:,1)')+(b*power(m(:,1),2));
+  error= sum(m(:,2)'-f);
+ 
+  retval= [f,p,error];
 
 endfunction

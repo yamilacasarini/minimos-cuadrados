@@ -14,6 +14,12 @@ function [retval] = potencial (input1, input2)
   
   p= inv(A)*B;
   
-  retval= [p(1), exp(p(2))];
+  a= p(1);
+  b= exp(p(2));
+  
+  f= b*power(m(:,1),a);
+  error= sum(m(:,2)'-f);
+ 
+  retval= [f,p,error];
 
 endfunction

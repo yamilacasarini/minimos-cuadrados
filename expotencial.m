@@ -13,6 +13,13 @@ function [retval] = expotencial (m)
   B= [z1;z2];
   
   p= inv(A)*B;
-  retval= [p(1), exp(p(2))];
   
+  a= p(1);
+  b= exp(p(2));
+  
+  f= b*exp(a*m(:,1));
+  error= sum(m(:,2)'-f);
+ 
+  retval= [f,p,error];
+   
 endfunction

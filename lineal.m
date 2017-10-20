@@ -13,6 +13,16 @@ function [retval] = lineal (m)
   A= [x1,y1;x2,y2];
   B= [z1;z2];
   
-  retval= inv(A)*B;
+  p= inv(A)*B;
+  
+  printf("%f", p(2));
+  
+  a= p(1);
+  b= p(2);
+  f= b+(a*m(:,1)');
+  error= sum(m(:,2)'-f);
+ 
+  retval= [f,p,error];
+  
   
 endfunction

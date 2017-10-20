@@ -14,6 +14,13 @@ function [retval] = hiperbola (input1, input2)
   B= [z1;z2];
   
   p= inv(A)*B;
-  retval= [power(p(1),-1), p(2)/p(1)];
+  
+  a= power(p(1),-1);
+  b= p(2)/p(1);
+  
+  f= a/(b+m(:,1));
+  error= sum(m(:,2)'-f);
+ 
+  retval= [f,p,error];
 
 endfunction
