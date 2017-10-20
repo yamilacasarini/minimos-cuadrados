@@ -15,8 +15,6 @@ function [retval] = lineal (m)
   
   p= inv(A)*B;
   
-  printf("%f", p(2));
-  
   a= p(1);
   b= p(2);
   f= b+(a*m(:,1)');
