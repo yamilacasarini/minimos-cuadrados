@@ -1,4 +1,4 @@
-function [retval] = hiperbola (input1, input2)
+function [retval] = hiperbola (m)
 
 
   x1= sum(power(m(:,1),2));
@@ -20,7 +20,7 @@ function [retval] = hiperbola (input1, input2)
   
   f= a/(b+m(:,1));
   error= sum(m(:,2)'-f);
- 
-  retval= [f,p,error];
+
+  retval= [error,p',f];
 
 endfunction

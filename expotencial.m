@@ -20,6 +20,6 @@ function [retval] = expotencial (m)
   f= b*exp(a*m(:,1));
   error= sum(m(:,2)'-f);
  
-  retval= [f,p,error];
+  retval= [f',p',error];
    
 endfunction

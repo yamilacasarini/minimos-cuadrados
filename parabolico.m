@@ -1,4 +1,4 @@
-function [retval] = parabolico (input1, input2)
+function [retval] = parabolico (m)
 
   x1= sum(power(m(:,1),4));
   x2= sum(power(m(:,1),3));
@@ -10,7 +10,7 @@ function [retval] = parabolico (input1, input2)
   
   z1= sum(power(m(:,1),2));
   z2= sum(m(:,1));
-  y2= length(m(:,1));
+  z3= length(m(:,1));
   
   aux= power(m(:,1),2);
   s1= sum(aux.*m(:,2));
@@ -26,9 +26,9 @@ function [retval] = parabolico (input1, input2)
   b= p(2);
   c= p(3);
   
-  f= c+(a*m(:,1)')+(b*power(m(:,1),2));
+  f= c+(a*m(:,1))+(b*power(m(:,1),2));
   error= sum(m(:,2)'-f);
- 
-  retval= [f,p,error];
+
+  retval= [error,p',f'];
 
 endfunction

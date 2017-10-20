@@ -20,7 +20,7 @@ function [retval] = lineal (m)
   f= b+(a*m(:,1)');
   error= sum(m(:,2)'-f);
  
-  retval= [f,p,error];
+  retval= [error,p',f];
   
   
 endfunction
