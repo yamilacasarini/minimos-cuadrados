@@ -17,10 +17,10 @@ function [retval] = lineal (m)
   
   a= p(1);
   b= p(2);
-  f= b+(a*m(:,1)');
-  error= sum(m(:,2)'-f);
+  f= b+(a*m(:,1));
+  error= sum(m(:,2)-f);
  
-  retval= [error,p',f];
+  retval= [error,p',f'];
   
   
 endfunction

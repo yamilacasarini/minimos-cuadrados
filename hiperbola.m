@@ -2,7 +2,7 @@ function [retval] = hiperbola (m)
 
 
   x1= sum(power(m(:,1),2));
-  x2= sum(log(m(:,1)));
+  x2= sum(m(:,1));
   
   y1= x2;
   y2= length(m(:,1));
@@ -18,9 +18,10 @@ function [retval] = hiperbola (m)
   a= power(p(1),-1);
   b= p(2)/p(1);
   
+  coef= [a,b];
   f= a/(b+m(:,1));
   error= sum(m(:,2)'-f);
 
-  retval= [error,p',f];
+  retval= [error,coef,f];
 
 endfunction

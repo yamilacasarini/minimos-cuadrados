@@ -1,15 +1,12 @@
 function [retval] = mincuadr (m)
 
- p= lineal(m);
-  
-  printf("p(x)=");
-  
-  n=1; 
-  for i=1:n+1
-  printf("%+fx^%d", p(i), n+1-i);
-  endfor
-  
  
-  plot(x,f);
+      funcion=p(1)*x
+      plot("x", funcion);
+      xlabel("x");
+      ylabel("%fx + %f", p(2), p(3));
+      title ("Aproximacion lineal");
+  
+ endwhile
 
 endfunction

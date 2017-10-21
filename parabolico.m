@@ -27,7 +27,7 @@ function [retval] = parabolico (m)
   c= p(3);
   
   f= c+(a*m(:,1))+(b*power(m(:,1),2));
-  error= sum(m(:,2)'-f);
+  error= sum(m(:,2)-f);
 
   retval= [error,p',f'];
 

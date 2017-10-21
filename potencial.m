@@ -17,9 +17,11 @@ function [retval] = potencial (m)
   a= p(1);
   b= exp(p(2));
   
+  coef= [a,b];
+  
   f= b*power(m(:,1),a);
-  error= sum(m(:,2)'-f);
+  error= sum(m(:,2)-f);
  
-  retval= [error,p',f];
+  retval= [error,coef,f'];
 
 endfunction

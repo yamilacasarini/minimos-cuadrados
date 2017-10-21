@@ -17,9 +17,11 @@ function [retval] = expotencial (m)
   a= p(1);
   b= exp(p(2));
   
+  coef= [a,b];
+  
   f= b*exp(a*m(:,1));
-  error= sum(m(:,2)'-f);
+  error= sum(m(:,2)-f);
  
-  retval= [f',p',error];
+  retval= [error,coef,f'];
    
 endfunction
