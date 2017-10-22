@@ -1,16 +1,16 @@
 function [retval] = casteoValores (raw)
   
-  m= [];
-  spliteado= strsplit(raw{2},";");
-  
-  for i=1:length(spliteado)
+  spliteado= strsplit(raw{2},{";","(",")"});  
+   m= [];
+   
+  for i=2:length(spliteado)-1
   
     aux = strsplit(spliteado{i},",");
-    a1 = substr(aux{1},2);
-    a2 = substr(aux{2},-1);
+    a1 = str2double(aux{1});
+    a2 = str2double(aux{2});
     
-    m = [m;a1,a2];    
+    m = [m;a1,a2];
   endfor
-  
+ 
   retval= m;
 endfunction
