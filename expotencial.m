@@ -1,5 +1,7 @@
-function [retval] = expotencial (m)
+function [retval] = expotencial (matrix,dec)
 
+   m= trunc(matrix,dec);
+  
   x1= sum(power(m(:,1),2));
   x2= sum(m(:,1));
   
@@ -12,8 +14,13 @@ function [retval] = expotencial (m)
   A= [x1,y1;x2,y2];
   B= [z1;z2];
   
+  A= trunc(A,dec);
+  B= trunc(B,dec);
+  
   p= inv(A)*B;
   
+  p= trunc(p,dec);
+   
   a= p(1);
   b= exp(p(2));
   
@@ -22,6 +29,10 @@ function [retval] = expotencial (m)
   f= b*exp(a*m(:,1));
   error= sum(m(:,2)-f);
  
+  f= trunc(f,dec);
+  error= trunc(error,dec);
+  coef= trunc(coef, dec);
+  
   retval= [error,coef,f'];
    
 endfunction

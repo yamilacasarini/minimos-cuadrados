@@ -19,13 +19,15 @@ function [retval] = mincuadr (m)
       case 1
         raw = inputdlg (prompt,"Ingreso de datos", rowscols, defaults); 
         m= casteoValores(raw);
+        dec = raw{1};
     
         while opc_submenu!= 6    
           opc_submenu = menu("Seleccione metodo de aproximacion", "1- Lineal", "2- Parabola", "3- Expotencial", "4- Potencial", "5- Hiperbolico\n", "Menu Principal");
         
          switch opc_submenu
             case 1
-              resul = lineal(m);
+              resul = lineal(m,dec);
+              opc_menu_aprox=0;
               
               while opc_menu_aprox!=4
                 opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
@@ -46,7 +48,8 @@ function [retval] = mincuadr (m)
               endwhile
               
             case 2
-                resul = parabolico(m);
+                resul = parabolico(m,dec);
+                opc_menu_aprox=0;
                 
                 while opc_menu_aprox!=4
                   opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
@@ -67,7 +70,8 @@ function [retval] = mincuadr (m)
               endwhile
                
             case 3
-                resul = expotencial(m);
+                resul = expotencial(m,dec);
+                opc_menu_aprox=0;
                 
                 while opc_menu_aprox!=4
                   opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
@@ -88,7 +92,8 @@ function [retval] = mincuadr (m)
               endwhile
                 
              case 4
-                resul = potencial(m);
+                resul = potencial(m,dec);
+                opc_menu_aprox=0;
                 
                  while opc_menu_aprox!=5
                     opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
@@ -108,7 +113,8 @@ function [retval] = mincuadr (m)
                   endswitch
               endwhile
                case 5
-                resul = hiperbola(m);
+                resul = hiperbola(m,dec);
+                opc_menu_aprox=0;
                 
                   while opc_menu_aprox!=4
                     opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");

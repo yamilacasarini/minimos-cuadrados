@@ -1,5 +1,7 @@
-function [retval] = parabolico (m)
+function [retval] = parabolico (matrix,dec)
 
+  m= trunc(matrix,dec);
+   
   x1= sum(power(m(:,1),4));
   x2= sum(power(m(:,1),3));
   x3= sum(power(m(:,1),2));
@@ -20,15 +22,22 @@ function [retval] = parabolico (m)
   A= [x1,y1,z1;x2,y2,z2;x3,y3,z3];
   B= [s1;s2;s3];
   
+  A= trunc(A,dec);
+  B= trunc(B,dec);
+  
   p= inv(A)*B;
   
+  p= trunc(p,dec);
   a= p(1);
   b= p(2);
   c= p(3);
   
   f= c+(a*m(:,1))+(b*power(m(:,1),2));
   error= sum(m(:,2)-f);
-
+  
+  f= trunc(f,dec);
+  error= trunc(error,dec);
+  
   retval= [error,p',f'];
 
 endfunction
