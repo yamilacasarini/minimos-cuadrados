@@ -20,8 +20,8 @@ function [retval] = mincuadr (m)
         raw = inputdlg (prompt,"Ingreso de datos", rowscols, defaults); 
         m= casteoValores(raw);
     
-        while opc_submenu!= 5    
-          opc_submenu = menu("Seleccione metodo de aproximacion", "1- Lineal", "2- Parabola", "3- Expotencial", "4- Potencial", "-5 Hiperbolico\n", "Menu Principal");
+        while opc_submenu!= 6    
+          opc_submenu = menu("Seleccione metodo de aproximacion", "1- Lineal", "2- Parabola", "3- Expotencial", "4- Potencial", "5- Hiperbolico\n", "Menu Principal");
         
          switch opc_submenu
             case 1
@@ -31,7 +31,7 @@ function [retval] = mincuadr (m)
                 opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
                 switch opc_menu_aprox
                   case 1
-                    funcion = strcat("p(x)= ", int2str(resul(2)), "*x + ", int2str(resul(3)));
+                    funcion = strcat("p(x)= ", num2str(resul(2)), "*x + ", num2str(resul(3)));
                     mess = msgbox(funcion);
                   case 2
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
@@ -49,10 +49,10 @@ function [retval] = mincuadr (m)
                 resul = parabolico(m);
                 
                 while opc_menu_aprox!=4
-                opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
+                  opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
                 switch opc_menu_aprox
                   case 1
-                    funcion = strcat("p(x)= ", int2str(resul(2)), "*x^2 + ", int2str(resul(3)), "x + ", int2str(resul(4)));
+                    funcion = strcat("p(x)= ", num2str(resul(2)), "*x^2 + ", num2str(resul(3)), "x + ", int2str(resul(4)));
                     mess = msgbox(funcion);
                   case 2
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
@@ -69,11 +69,11 @@ function [retval] = mincuadr (m)
             case 3
                 resul = expotencial(m);
                 
-                  while opc_menu_aprox!=4
-                opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
+                while opc_menu_aprox!=4
+                  opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
                 switch opc_menu_aprox
                   case 1
-                    funcion = strcat("p(x)= ", int2str(resul(3)), "*e^(", int2str(resul(2)), "x)");
+                    funcion = strcat("p(x)= ", num2str(resul(3)), "*e^(", num2str(resul(2)), "x)");
                     mess = msgbox(funcion);
                   case 2
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
@@ -90,11 +90,11 @@ function [retval] = mincuadr (m)
              case 4
                 resul = potencial(m);
                 
-                  while opc_menu_aprox!=5
+                 while opc_menu_aprox!=5
                     opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
                 switch opc_menu_aprox
                   case 1
-                    funcion = strcat("p(x)= ", int2str(resul(3)), "*x^", int2str(resul(2)));
+                    funcion = strcat("p(x)= ", num2str(resul(3)), "*x^", num2str(resul(2)));
                     mess = msgbox(funcion);
                   case 2
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
@@ -114,7 +114,7 @@ function [retval] = mincuadr (m)
                     opc_menu_aprox = menu("Seleccione una opcion", "1- Mostrar funcion aproximante", "2- Mostrar detalle", "3- Mostrar grafico\n", "Volver atras");
                 switch opc_menu_aprox
                   case 1
-                    funcion = strcat("p(x)= ", int2str(resul(2)), "/(", int2str(resul(2)), " + x)");
+                    funcion = strcat("p(x)= ", num2str(resul(2)), "/(", num2str(resul(2)), " + x)");
                     mess = msgbox(funcion);
                   case 2
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
