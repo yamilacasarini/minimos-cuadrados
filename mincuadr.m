@@ -12,7 +12,7 @@ function [retval] = mincuadr (m)
   opc_submenu=0;
   opc_menu_aprox=0;
   m=[];
-  
+   
   while opc_menu_ppal!=3
       opc_menu_ppal = menu("Bienvenido", "1- Ingresar Datos", "2- Comparar aproximaciones", "3- Salir"); 
     switch opc_menu_ppal
@@ -130,7 +130,7 @@ function [retval] = mincuadr (m)
                     plot(x, y);
                     xlabel("x");
                     ylabel("p(x)");
-                    title("Aproximacion potencial");
+                    title("Aproximacion hiperbolica");
                   endswitch
               endwhile
                endswitch
