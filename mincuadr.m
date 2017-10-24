@@ -17,6 +17,7 @@ function [retval] = mincuadr (m)
       opc_menu_ppal = menu("Bienvenido", "1- Ingresar Datos", "2- Comparar aproximaciones", "3- Salir"); 
     switch opc_menu_ppal
       case 1
+        opc_submenu=0;
         raw = inputdlg (prompt,"Ingreso de datos", rowscols, defaults); 
         m= casteoValores(raw);
         dec = raw{1};
@@ -39,11 +40,9 @@ function [retval] = mincuadr (m)
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
                   case 3
                     x= m(:,1);
-                    y=resul(4:end);
-                    plot(x, y);
-                    xlabel("x");
-                    ylabel("p(x)");
-                    title ("Aproximacion lineal");
+                    y0= m(:,2);
+                    y1=resul(4:end);
+                    graficar(x,y0,y1,"Lineal");
                   endswitch
               endwhile
               
@@ -61,11 +60,9 @@ function [retval] = mincuadr (m)
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
                   case 3
                     x= m(:,1);
-                    y=resul(5:end);
-                    plot(x, y);
-                    xlabel("x");
-                    ylabel("p(x)");
-                    title("Aproximacion parabolica");
+                    y0= m(:,2);
+                    y1=resul(5:end);
+                    graficar(x,y0,y1,"Parabolica");
                   endswitch
               endwhile
                
@@ -83,11 +80,9 @@ function [retval] = mincuadr (m)
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
                   case 3
                     x= m(:,1);
-                    y=resul(4:end);
-                    plot(x, y);
-                    xlabel("x");
-                    ylabel("p(x)");
-                    title("Aproximacion expotencial");
+                    y0= m(:,2);
+                    y1=resul(4:end);
+                    graficar(x,y0,y1,"Expotencial");
                   endswitch
               endwhile
                 
@@ -105,11 +100,9 @@ function [retval] = mincuadr (m)
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
                   case 3
                     x= m(:,1);
-                    y=resul(4:end);
-                    plot(x, y);
-                    xlabel("x");
-                    ylabel("p(x)");
-                    title("Aproximacion potencial");
+                    y0= m(:,2);
+                    y1=resul(4:end);
+                    graficar(x,y0,y1,"Potencial");
                   endswitch
               endwhile
                case 5
@@ -126,11 +119,9 @@ function [retval] = mincuadr (m)
                     mess = msgbox("Estamos trabajando en la tabla para su bienestar");
                   case 3
                     x= m(:,1);
-                    y=resul(4:end);
-                    plot(x, y);
-                    xlabel("x");
-                    ylabel("p(x)");
-                    title("Aproximacion hiperbolica");
+                    y0= m(:,2);
+                    y1=resul(4:end);
+                    graficar(x,y0,y1,"Hiperbolica");
                   endswitch
               endwhile
                endswitch
