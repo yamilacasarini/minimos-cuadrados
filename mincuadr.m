@@ -1,10 +1,10 @@
-function [retval] = mincuadr (m)
+function [retval] = mincuadr ()
 
   pkg load control;
   pkg load signal;
 
 #Inicializo variables para pedir datos despues
-  prompt = {"Cantidad de decimaleaaas","Por favor ingrese los datos de la forma (x1,y1);...;(xn,yn)"};
+  prompt = {"Cantidad de decimales","Por favor ingrese los datos de la forma (x1,y1);...;(xn,yn)"};
   defaults = {"2",""};
   rowscols = [1;1.10];
   
