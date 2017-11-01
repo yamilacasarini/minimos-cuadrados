@@ -40,4 +40,4 @@ function [retval] = parabolico (matrix,dec)
   
   retval= [error,p',f'];
 
-endfunction
+end

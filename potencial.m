@@ -34,4 +34,4 @@ function [retval] = potencial (matrix,dec)
   
   retval= [error,coef,f'];
 
-endfunction
+end

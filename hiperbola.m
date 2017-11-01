@@ -34,4 +34,4 @@ function [retval] = hiperbola (matrix,dec)
   
   retval= [error,coef,f];
 
-endfunction
+end

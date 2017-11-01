@@ -35,4 +35,4 @@ function [retval] = expotencial (matrix,dec)
   
   retval= [error,coef,f'];
    
-endfunction
+end

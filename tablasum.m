@@ -2,7 +2,7 @@ function [retval] = tablasum (m,dec,tipo)
     
     switch tipo
       case 1
-        #lineal
+        %lineal
         
         m = trunc(m,dec);
         x1= sum(power(m(:,1),2));
@@ -16,7 +16,7 @@ function [retval] = tablasum (m,dec,tipo)
   
         retval= [trunc(x1,dec),trunc(y1,dec);trunc(x2,dec),trunc(y2,dec);trunc(z1,dec);trunc(z2,dec)];
        case 2
-        #Expotencial
+       %Expotencial
         
           m= trunc(matrix,dec);
   
@@ -33,7 +33,7 @@ function [retval] = tablasum (m,dec,tipo)
           retval= trunc(retval,dec);
           
          case 3
-          #Potencial
+          %Potencial
           
           m= trunc(matrix,dec);
   
@@ -50,7 +50,7 @@ function [retval] = tablasum (m,dec,tipo)
           retval= trunc(retval,dec);
           
          case 4
-          #Hiperbolica
+         %Hiperbolica
           
            m= trunc(matrix,dec);
     
@@ -67,7 +67,7 @@ function [retval] = tablasum (m,dec,tipo)
            retval= trunc(retval,dec);
            
           case 4
-            #Parabolico
+           %Parabolico
             
             m= trunc(matrix,dec);
    
@@ -90,6 +90,6 @@ function [retval] = tablasum (m,dec,tipo)
   
             retval= [x1,y1,z1;x2,y2,z2;x3,y3,z3;s1,s2,s3];
             retval= trunc(retval,dec);
-    endswitch
+    end
     
-endfunction
+end

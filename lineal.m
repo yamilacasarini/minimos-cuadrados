@@ -30,4 +30,4 @@ function [retval] = lineal (matrix,dec)
   retval= [error,p',f'];
   
   
-endfunction
+end
