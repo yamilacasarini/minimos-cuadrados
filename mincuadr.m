@@ -56,7 +56,7 @@ function [retval] = mincuadr ()
                     funcion = strcat('p(x)= ', num2str(resul(2)), '*x^2 + ', num2str(resul(3)), 'x + ', int2str(resul(4)));
                     msgbox(funcion);
                   case 2
-                    tablasum(m,dec,2);
+                    tablasum(m,dec,5);
                   case 3
                     x= m(:,1);
                     y0= m(:,2);
@@ -76,7 +76,7 @@ function [retval] = mincuadr ()
                     funcion = strcat('p(x)= ', num2str(resul(3)), '*e^(', num2str(resul(2)), 'x)');
                     msgbox(funcion);
                   case 2
-                    tablasum(m,dec,3);
+                    tablasum(m,dec,2);
                   case 3
                     x= m(:,1);
                     y0= m(:,2);
@@ -96,7 +96,7 @@ function [retval] = mincuadr ()
                     funcion = strcat('p(x)= ' , num2str(resul(3)), '*x^', num2str(resul(2)));
                     msgbox(funcion);
                   case 2
-                    tablasum(m,dec,4);
+                    tablasum(m,dec,3);
                   case 3
                     x= m(:,1);
                     y0= m(:,2);
@@ -115,7 +115,7 @@ function [retval] = mincuadr ()
                     funcion = strcat('p(x)= ', num2str(resul(2)), '/(', num2str(resul(2)), ' + x)');
                     msgbox(funcion);
                   case 2
-                    tablasum(m,dec,5);
+                    tablasum(m,dec,4);
                   case 3
                     x= m(:,1);
                     y0= m(:,2);
