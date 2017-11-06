@@ -28,14 +28,14 @@ function [retval] = parabolico (matrix,dec)
   p= inv(A)*B;
   
   p= trunc(p,dec);
-  a= p(1);
-  b= p(2);
-  c= p(3);
+  a= trunc(p(1),dec);
+  b= trunc(p(2),dec);
+  c= trunc(p(3),dec);
   
   f= c+(a*m(:,1))+(b*power(m(:,1),2));
-  error= sum(m(:,2)-f);
-  
   f= trunc(f,dec);
+  
+  error= sum(m(:,2)-f);
   error= trunc(error,dec);
   
   retval= [error,p',f'];

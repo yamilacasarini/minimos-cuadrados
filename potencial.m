@@ -18,19 +18,19 @@ function [retval] = potencial (matrix,dec)
   B= trunc(B,dec);
   
   p= inv(A)*B;
-  
-  p= trunc(p,dec);
-  a= p(1);
-  b= exp(p(2));
+ 
+  a = trunc(p(1),dec);
+  b = trunc(exp(p(2)),dec);
   
   coef= [a,b];
+  coef= trunc(coef,dec);
   
   f= b*power(m(:,1),a);
-  error= sum(m(:,2)-f);
-  
   f= trunc(f,dec);
+  
+  error= sum(m(:,2)-f);
   error= trunc(error,dec);
-  coef=trunc(error,dec);
+  
   
   retval= [error,coef,f'];
 

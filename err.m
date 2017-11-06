@@ -1,5 +1,5 @@
-function [retval] = err (ret)
+function [retval] = err (ret,dec)
 
-  retval = ret(1);
+  retval = trunc(ret(1),dec);
   
 end

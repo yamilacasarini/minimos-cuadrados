@@ -19,12 +19,12 @@ function [retval] = lineal (matrix,dec)
   
   p= trunc(p,dec);
   
-  a= p(1);
-  b= p(2);
+  a= trunc(p(1),dec);
+  b= trunc(p(2),dec);
   f= b+(a*m(:,1));
-  error= sum(m(:,2)-f);
-  
   f=trunc(f,dec);
+  
+  error= sum(m(:,2)-f);
   error= trunc(error,dec);
  
   retval= [error,p',f'];

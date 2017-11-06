@@ -21,17 +21,16 @@ function [retval] = expotencial (matrix,dec)
   
   p= trunc(p,dec);
    
-  a= p(1);
-  b= exp(p(2));
+  a= trunc(p(1),dec);
+  b= trunc(exp(p(2)),dec);
   
   coef= [a,b];
   
   f= b*exp(a*m(:,1));
-  error= sum(m(:,2)-f);
- 
   f= trunc(f,dec);
+  
+  error= sum(m(:,2)-f);
   error= trunc(error,dec);
-  coef= trunc(coef, dec);
   
   retval= [error,coef,f'];
    

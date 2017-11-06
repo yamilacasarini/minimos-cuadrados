@@ -1,7 +1,4 @@
 function [retval] = mincuadr ()
-
- % pkg load control;
-  %pkg load signal;
   
   prompt = {'Cantidad de decimales','Por favor ingrese los datos de la forma (x1,y1);...;(xn,yn)'};
   defaults = {'2',''};
@@ -123,8 +120,16 @@ function [retval] = mincuadr ()
                     graficar(x,y0,y1,' Hiperbolica');
                 end
             end
+         end
         end
-    end
+        case 2
+            
+            if isempty(m)
+                msgbox('Por favor, ingrese los datos');
+            else
+                tablaerr(m,dec);
+            end    
+         
 end
   
         

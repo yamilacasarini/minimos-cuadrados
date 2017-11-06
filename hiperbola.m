@@ -26,9 +26,9 @@ function [retval] = hiperbola (matrix,dec)
   
   coef= [a,b];
   f= a/(b+m(:,1));
-  error= sum(m(:,2)'-f);
-
   f= trunc(f,dec);
+  error= sum(m(:,2)'-f);
+  
   error= trunc(error,dec);
   coef= trunc(coef, dec);
   
