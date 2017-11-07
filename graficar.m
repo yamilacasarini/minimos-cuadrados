@@ -1,8 +1,8 @@
-function [retval] = graficar(x0,y0,y1, ttl)
+function [retval] = graficar(x0,y0,x1,y1,ttl)
 
   hold on
 
-  plot(x0, y1)
+  plot(x1, y1)
   scatter(x0,y0); 
   xlabel('x');
   ylabel('p(x)');

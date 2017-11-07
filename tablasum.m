@@ -44,7 +44,7 @@ function [retval] = tablasum (m,dec,tipo)
           %Potencial
           
           for i = 1:1:length(m(:,1))
-            resul = [resul;i,m(i,1),m(i,2),log(m(i,1)),log(m(i,2)),power(log(m(i,1),2)),log(m(i,2)).*log(m(i,1))];
+            resul = [resul;i,m(i,1),m(i,2),log(m(i,1)),log(m(i,2)),power(log(m(i,1)),2),log(m(i,2)).*log(m(i,1))];
             resul = trunc(resul,dec);
           end
           
